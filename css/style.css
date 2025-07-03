@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #f5f0E6;
+}
+
+/* ================= Banner Topo ================= */
+.banner-topo {
+  width: 100%;
+  height: 335px;
+  background: linear-gradient(to bottom, #503b2d, #f5f0E6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.banner-conteudo {
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-imagem {
+  width: 100%;
+  max-height: 100%;
+}
+
+/* ================= Título ================= */
+.titulo-livros {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #212121;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: 'Times New Roman', Times, serif;
+  position: relative;
+  max-width: 600px;
+  margin: 50px auto 20px;
+}
+
+.titulo-livros::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: #e74c3c;
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+/* ================= Carrossel de Livros ================= */
+.carrossel-livros {
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 10px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE e Edge */
+}
+
+.carrossel-container::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari */
+}
+
+/* Cards de Livros */
+.book-card {
+  flex: 0 0 auto;
+  min-width: 200px;
+  width: 240px;
+  background: #3f0101;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Corrigido: Conteúdo de hover nos cards */
+.book-card .conteudo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #F5F5FF;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(100%);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* mantém tudo no final do card */
+  gap: 6px; /* espaçamento entre título, autor e botão */
+  box-sizing: border-box;
+}
+
+
+.book-card:hover .conteudo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.book-author {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+}
+
+
+.read-more {
+  margin-top: 10px;
+  background-color: #6E3B3B;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  background-color: #bb7d7d;
+}
+
+/* ================= Botões de Carrossel ================= */
+.btn-carrossel {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 15px;
+}
+
+/* ================= Carrossel de Autores ================= */
+.carrossel-autores {
+  position: relative;
+  width: 100%;
+  padding: 50px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-autores .carrossel-container {
+  display: flex;
+  gap: 30px;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.carrossel-autores .carrossel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.autor-card {
+  position: relative;
+  text-align: center;
+  flex: 0 0 auto;
+}
+
+.carrossel-autores img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrossel-autores img:hover {
+  transform: scale(1.1);
+}
+
+.autor-nome {
+  position: absolute;
+  bottom: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.autor-card:hover .autor-nome {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================= Responsividade ================= */
+@media (max-width: 768px) {
+  .carrossel-container {
+    gap: 15px;
+    padding: 0 10px;
+  }
+
+  .book-card {
+    width: 180px;
+  }
+
+  .book-cover {
+    height: 240px;
+  }
+
+  .btn-carrossel {
+    font-size: 20px;
+    padding: 10px;
+  }
+}

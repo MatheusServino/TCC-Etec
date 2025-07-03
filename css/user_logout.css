@@ -1,0 +1,15 @@
+/* ========================== Botão de Voltar ========================= */
+.back-arrow {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    text-decoration: none;
+    z-index: 1000;
+    transition: color 0.3s ease;
+}
+
+.back-arrow:hover {
+    color: #ffd6d6;
+}

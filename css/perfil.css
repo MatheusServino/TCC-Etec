@@ -1,0 +1,256 @@
+/* ========================= Importação de Fonte ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+/* ========================= Estilos Globais ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+  background-color: #f5f0E6;
+}
+
+/* ========================== Perfil ========================= */
+.topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px 10px 30px;
+    margin: 40px auto 0 auto;
+    width: 85%;
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  
+  .topo .txt-link {
+    font-size: 20px; 
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .titulo-acima-do-perfil.esquerda {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #333;
+    margin-left: 0;
+  }
+  
+
+  .titulo-acima-do-perfil.direita {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .frase {
+    flex-basis: 100%; /* Ocupa 100% da linha */
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+    font-style: italic;
+  }
+
+  .titulo-acima-do-perfil .icon {
+    margin-right: 8px;
+    font-size: 22px;
+  }
+
+.perfil {
+    display: flex;
+    align-items: flex-start;
+    padding: 40px 30px;
+    background-color: #fff;
+    margin: 60px auto 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    min-height: 300px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+  }
+  
+  .perfil img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-right: 50px;
+  }
+  
+  .perfil .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  .perfil h3 {
+    color: #333;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .perfil p {
+    color: #666;
+    font-size: 22px;
+    line-height: 1.6;
+    padding: 0 20px;
+  }
+  .info-livros i.bi-hearts {
+    color: #E63946; /* vermelho para favoritos */
+  }
+  
+  .info-livros i.bi-check-circle-fill {
+    color: #2A9D8F; /* verde para livros lidos */
+  }
+  
+  .info-livros i.bi-book-half {
+    color: #1D3557; /* azul para lendo */
+  }
+  .info-livros a {
+    all: unset; /* remove praticamente todas as estilizações */
+    cursor: pointer; /* mantém o cursor de link */
+    color: inherit; /* herda a cor do elemento pai */
+    text-decoration: none; /* remove sublinhado */
+  }
+  .perfil .info p {
+    font-size: 22px;
+    color: #777;
+    margin-top: 15px;
+  }
+  
+/* ========================== Título dos Livros ========================= */
+.titulo-livros {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  color: #4a4a4a;
+}
+
+/* ================= Carrossel de Livros ================= */
+.carrossel-livros {
+  position: relative;
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carrossel-container {
+  display: flex;
+  gap: 30px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  padding: 10px;
+  transition: transform 0.5s ease;
+  will-change: transform;
+
+  scrollbar-width: none;       /* Firefox */
+  -ms-overflow-style: none;    /* IE e Edge */
+}
+
+.carrossel-container::-webkit-scrollbar {
+  display: none;               /* Chrome, Safari */
+}
+
+/* Cards de Livros */
+.book-card {
+  flex: 0 0 auto;
+  min-width: 200px;
+  width: 240px;
+  background: #3f0101;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.book-card:hover {
+  transform: translateY(-5px);
+}
+
+.book-cover {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* Corrigido: Conteúdo de hover nos cards */
+.book-card .conteudo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #F5F5FF;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(100%);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* mantém tudo no final do card */
+  gap: 6px; /* espaçamento entre título, autor e botão */
+  box-sizing: border-box;
+}
+
+
+.book-card:hover .conteudo {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.book-author {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+}
+
+
+.read-more {
+  margin-top: 10px;
+  background-color: #6E3B3B;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.read-more:hover {
+  background-color: #bb7d7d;
+}
+/* ================= Botões de Carrossel ================= */
+.btn-carrossel {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  user-select: none;
+  padding: 0 15px;
+}

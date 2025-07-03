@@ -1,0 +1,491 @@
+
+ 
+/* ========================= Importação de Fonte ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+ 
+/* ========================= Estilos Globais ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+ 
+body {
+  background-color: #f5f0E6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* ========================= Layout Principal do Livro ========================= */
+.livro_flex {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1600px; /* Aumentado */
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+ 
+/* ========================= titulo-avaliação ========================= */
+.titulo-avaliacoes{
+  text-align: center;
+}
+ 
+.mensagem-centro {
+  text-align: center;
+  font-style: italic; /* opcional, só para destacar */
+  color: #555; /* opcional */
+}
+ 
+/* ========================= Lado Esquerdo - Capa do Livro ========================= */
+.livro_capa {
+  flex-shrink: 0;
+  width: 250px;
+}
+.livro_capa img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+ 
+/* ========================= Lado Direito - Informações (Maior, porém equilibrado) ========================= */
+.info_livro {
+  flex: 1;
+  font-size: 26px; /* texto base bem maior */
+  line-height: 2;
+  color: #2B2D42;
+}
+ 
+.info_livro h1 {
+  font-size: 4.5rem; /* título principal grande */
+  margin: 20px 0;
+}
+ 
+.info_livro h2 {
+  font-size: 3.5rem; /* subtítulo grande */
+  margin: 18px 0;
+}
+ 
+.info_livro h3 {
+  font-size: 2.75rem; /* título menor */
+  margin: 16px 0;
+}
+ 
+.text_column {
+  font-size: 24px; /* texto descritivo maior */
+  line-height: 2.2;
+  margin-bottom: 32px;
+}
+ 
+/* From Uiverse.io by Yaya12085 - Modificado para fundo rosa com letras pretas */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 260px;
+  padding: 20px 1px;
+  margin: 10px 0;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(255, 105, 180, 0.3); /* rosa suave */
+  border-radius: 10px;
+  background-color: #f8e1f4;
+  background: #f5f0E6;
+}
+ 
+.content {
+  padding: 20px;
+}
+ 
+.content .price {
+  color: #222; /* preto suave */
+  font-weight: 800;
+  font-size: 50px;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+ 
+.content .description {
+  color: #444; /* cinza escuro */
+  margin-top: 10px;
+  font-size: 14px;
+}
+ 
+.content .title {
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #111;
+  margin-top: 10px;
+  font-size: 25px;
+  letter-spacing: 1px;
+}
+ 
+button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  border: none;
+  outline: none;
+  color: #ffffff; /* texto preto */
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #6E3B3B;
+  border-radius: 0.5rem;
+  width: 90%;
+  text-shadow: 0px 4px 12px rgba(255, 255, 255, 0.4);
+}
+button:hover {
+  cursor: pointer; /* muda o cursor para mãozinha */
+}
+
+ 
+/* ========================= // Botões ========================= */
+.livro_botoes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+.livro_botoes button {
+  padding: 10px 20px;
+  background-color: #821f36;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.livro_botoes button:hover {
+  background-color: #5d1527;
+}
+ 
+/* ========================= Botões de Ação (Favoritar, Lendo, Lido) ========================= */
+.livro_botoes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: flex-start;
+  margin-top: 24px;
+}
+.livro_botoes a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: 'Outfit', sans-serif;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+  color: white;
+  margin-bottom: 24px;
+}
+ 
+/* Botão Favoritar */
+.btn-favoritar {
+  background-color: #a80000;
+}
+.btn-favoritar:hover {
+  background-color: #ff0000;
+  transform: translateY(-3px);
+}
+ 
+/* Botão Lendo */
+.btn-lendo {
+  background-color:  #0358a7;
+}
+.btn-lendo:hover {
+  background-color: #0573ce;
+  transform: translateY(-3px);
+}
+ 
+/* Botão Lido */
+.btn-lido {
+  background-color: #43a005;
+}
+.btn-lido:hover {
+  background-color: #05ce05;
+  transform: translateY(-3px);
+}
+ 
+/* Ícones */
+.livro_botoes i {
+  font-size: 1.2rem;
+}
+.leia-mais {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6E3B3B;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.leia-mais:hover {
+  background-color: #bb7d7d;
+}
+
+/* ========================= // Botão Leia Mais ========================= */
+.toggle-sinopse {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6E3B3B;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s;
+}
+.toggle-sinopse:hover {
+  background-color: #bb7d7d;
+}
+.sinopse-completa {
+  display: none;
+}
+.sinopse-completa.mostrar {
+  display: block;
+}
+.sinopse-resumida.esconder {
+  display: none;
+}
+ 
+/* ========================= // Área Expandida da Sinopse ========================= */
+.sinopse-expandida {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.sinopse-expandida.ativa {
+  max-height: 500px;
+  opacity: 1;
+}
+ 
+/* ========================= // Publicar Comentário ========================= */
+.avaliacao {
+  max-width: 5000px;
+  margin: 30px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  font-family: 'Outfit', sans-serif;
+}
+ 
+.avaliacao h3 {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0B2841;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.avaliacao textarea {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.estrelas {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+ 
+.estrelas input[type="radio"] {
+  display: none;
+}
+ 
+.estrelas label {
+  font-size: 2.5rem;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+ 
+.estrelas input[type="radio"]:checked ~ label,
+.estrelas label:hover,
+.estrelas label:hover ~ label {
+  color: #FFD700; /* Amarelo dourado */
+}
+.estrela-preenchida {
+  color: gold !important;
+}
+ 
+.estrela-vazia {
+  color: lightgray !important;
+}
+/* Criar as variaveis com as cores */
+:root {
+  --amarelo: #ffcc00;
+  --cinza: #cccccc;
+}
+ 
+/* Não exibir o input radio */
+.estrelas input[type=radio] {
+  display: none;
+}
+ 
+/* Criar as estrelas preenchidas de amarelo*/
+.estrelas label i.opcao.fa:before {
+  content: '\f005';
+  color: var(--amarelo);
+}
+ 
+/* Atribuir o cinza nas estrelas, quando selecionar a estrela retirar o cinza*/
+.estrelas input[type=radio]:checked~label i.fa:before {
+  color: var(--cinza);
+}
+ 
+/* Personalizar a estrela preenchida */
+.estrela-preenchida {
+  color: var(--amarelo);
+}
+ 
+/* Personalizar a estrela vazia */
+.estrela-vazia{
+  color: var(--cinza);
+}
+ 
+textarea {
+  width: 100%;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+}
+ 
+input[type="submit"] {
+  margin-top: 15px;
+  width: 100%;
+  background-color: #0B2841;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+ 
+input[type="submit"]:hover {
+  background-color: #09324c;
+}
+ 
+/* ========================= // Estilo Comentários ========================= */
+.caixa {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0 20px 0;
+  max-width: 5000px;
+  display: flex;
+  gap: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.usuario {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.conteudo {
+  flex: 1;
+}
+.uusuario {
+  font-weight: bold;
+  color: #2B2D42;
+}
+.horario {
+  font-size: 0.9em;
+  color: #888;
+}
+.text_coment {
+  font-size: 1em;
+  color: #333;
+  line-height: 1.5;
+}
+.comentarios-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+
+}
+.comentarios-container h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+/* ========================= Responsividade Mobile ========================= */
+@media (max-width: 900px) {
+  .livro_flex {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+ 
+  .livro_flex img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+ 
+  .info_livro {
+    width: 100%;
+    font-size: 26px;
+  }
+ 
+  .info_livro h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+  }
+ 
+  .info_livro h2 {
+    font-size: 2.5rem;
+    line-height: 1.3;
+  }
+ 
+  .info_livro h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+  }
+ 
+  .text_column {
+    font-size: 22px;
+    line-height: 1.7;
+  }
+ 
+  .livro_botoes {
+    justify-content: center;
+    gap: 12px;
+  }
+ 
+  .livro_botoes a {
+    font-size: 0.65rem;
+    padding: 6px 10px;
+  }
+}

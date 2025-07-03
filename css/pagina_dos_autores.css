@@ -1,0 +1,274 @@
+/* ========================= Importação de Fonte ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+ 
+/* ========================= Estilos Globais ========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+ 
+body {
+  background-color: #f5f0E6;
+  /* Esta será a cor de fundo */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  /* Mantido do segundo body para cor de texto */
+  padding: 40px 20px;
+  /* Mantido do segundo body para padding */
+}
+ 
+/* ========================= Layout Principal do Livro ========================= */
+.livro_flex {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  background: #fff;
+  padding: 40px;
+  border-radius: 15px;
+  margin: 40px auto;
+  max-width: 1600px;
+  /* Aumentado */
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+ 
+/* ========================= Lado Esquerdo - Capa do Livro ========================= */
+.livro_capa {
+  flex-shrink: 0;
+  width: 250px;
+}
+ 
+.livro_capa img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+ 
+/* ========================= Lado Direito - Informações (Maior, porém equilibrado) ========================= */
+.info_livro {
+  flex: 1;
+  font-size: 26px;
+  /* texto base bem maior */
+  line-height: 2;
+  color: #2B2D42;
+}
+ 
+.info_livro h1 {
+  font-size: 4.5rem;
+  /* título principal grande */
+  margin: 20px 0;
+}
+ 
+.info_livro h2 {
+  font-size: 3.5rem;
+  /* subtítulo grande */
+  margin: 18px 0;
+}
+ 
+.titulo-centralizado {
+  text-align: center;
+}
+ 
+.info_livro h3 {
+  font-size: 2.75rem;
+  /* título menor */
+  margin: 16px 0;
+}
+ 
+.text_column {
+  font-size: 24px;
+  /* texto descritivo maior */
+  line-height: 2.2;
+  margin-bottom: 32px;
+}
+ 
+/* Cards de Livros */
+.book-card {
+  flex: 0 0 auto;
+  min-width: 200px;
+  width: 240px;
+  background: #3f0101;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  position: relative;
+}
+ 
+.book-card:hover {
+  transform: translateY(-5px);
+}
+ 
+.book-cover {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+ 
+/* Corrigido: Conteúdo de hover nos cards */
+.livros-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+ 
+.book-card .conteudo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #F5F5FF;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(100%);
+ 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  /* mantém tudo no final do card */
+  gap: 6px;
+  /* espaçamento entre título, autor e botão */
+  box-sizing: border-box;
+}
+ 
+.book-card:hover .conteudo {
+  opacity: 1;
+  transform: translateY(0);
+}
+ 
+.book-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1.2;
+}
+ 
+.book-author {
+  font-size: 0.95rem;
+  color: #ccc;
+  margin: 0;
+}
+ 
+.read-more {
+  margin-top: 10px;
+  background-color: #6E3B3B;
+  border: none;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+ 
+.read-more:hover {
+  background-color: #bb7d7d;
+}
+ 
+/* ========================= Publicar Comentário ========================= */
+/* As propriedades do body foram movidas para a primeira declaração do body */
+.avaliacao {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+ 
+h1 {
+  font-size: 2.5rem;
+  color: #5a3e36;
+  margin-bottom: 10px;
+}
+ 
+p.desc {
+  font-size: 1.1rem;
+  color: #7d5f53;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+ 
+.formulario {
+  background: #fffaf3;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+ 
+.formulario label {
+  display: block;
+  font-weight: bold;
+  margin-top: 15px;
+  color: #5a3e36;
+}
+ 
+.formulario select,
+.formulario textarea,
+.formulario button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+ 
+.formulario textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+ 
+.formulario button {
+  background-color: #8c5e58;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px;
+}
+ 
+.formulario button:hover {
+  background-color: #a26c62;
+}
+ 
+.cartas {
+  margin-top: 40px;
+  text-align: left;
+}
+ 
+.carta {
+  background: #fffdf8;
+  border-left: 5px solid #8c5e58;
+  padding: 18px 22px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+}
+ 
+.carta strong {
+  color: #5a3e36;
+  display: block;
+  margin-bottom: 8px;
+}
+ 
+.carta p {
+  margin: 0;
+  color: #444;
+  line-height: 1.6;
+}
+ 

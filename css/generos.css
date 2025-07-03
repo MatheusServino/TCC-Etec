@@ -1,0 +1,246 @@
+/* ========================= Importação de Fonte ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+/* ========================= Estilos Globais ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color:#f5f0E6;
+}
+
+/* ========================== Título dos Livros (Centralizado) ========================= */
+.titulo-livros {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #000000;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* ================= Carrossel de Livros ================= */
+.carrossel-livros {
+    position: relative;
+    width: 100%;
+    padding: 40px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrossel-container {
+    display: flex;
+    gap: 30px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    padding: 10px 20px; /* corrigido para dar espaço lateral */
+    scroll-padding-left: 20px; /* garante que o primeiro card apareça todo */
+    transition: transform 0.5s ease;
+    will-change: transform;
+
+    scrollbar-width: none;       /* Firefox */
+    -ms-overflow-style: none;    /* IE e Edge */
+}
+
+.carrossel-container::-webkit-scrollbar {
+    display: none;               /* Chrome, Safari */
+}
+
+/* Cards de Livros */
+.book-card {
+    flex: 0 0 auto;
+    min-width: 200px;
+    width: 240px;
+    background: #3f0101;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 10px;
+    box-sizing: border-box;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    position: relative;
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+}
+
+.book-cover {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Conteúdo no hover */
+.book-card .conteudo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #F5F5FF;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(100%);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 6px;
+    box-sizing: border-box;
+}
+
+.book-card:hover .conteudo {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.book-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.book-author {
+    font-size: 0.95rem;
+    color: #ccc;
+    margin: 0;
+}
+
+.read-more {
+    margin-top: 10px;
+    background-color: #6E3B3B;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.read-more:hover {
+    background-color: #bb7d7d;
+}
+
+/* Botões do Carrossel */
+.btn-carrossel {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 0 15px;
+}
+
+/* Carrossel de Autores */
+.carrossel-autores img {
+    flex: 0 0 auto;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.carrossel-autores img:hover {
+    transform: scale(1.1);
+}
+
+/* ================= Estilos Base (Mobile-First) ================= */
+.carrossel-container {
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 10px 20px; /* corrigido aqui também */
+    scroll-padding-left: 20px;
+}
+
+.book-card {
+    flex: 0 0 auto;
+    width: 150px;
+    scroll-snap-align: start;
+}
+
+.book-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.btn-carrossel {
+    font-size: 18px;
+    padding: 8px;
+}
+
+/* ================= Responsividade: Tablets e Telas Médias ================= */
+@media (min-width: 768px) {
+  .carrossel-container {
+    padding: 0 40px;
+    scroll-padding-left: 40px;
+    }
+
+    .book-card {
+        width: 200px;
+    }
+
+    .book-cover {
+        height: 270px;
+    }
+
+    .btn-carrossel {
+        font-size: 22px;
+        padding: 12px;
+    }
+}
+
+/* ================= Responsividade: Desktops Grandes, TVs e Datashows ================= */
+@media (min-width: 1200px) {
+  .carrossel-container {
+    padding: 0 60px;
+    scroll-padding-left: 60px;
+    }
+
+    .book-card {
+        width: 250px;
+    }
+
+    .book-cover {
+        height: 350px;
+    }
+
+    .btn-carrossel {
+        font-size: 28px;
+        padding: 15px;
+    }
+}
+
+/* ================= Estilos Opcionais para TVs e Datashows ================= */
+@media (min-width: 1920px) {
+    body {
+        font-size: 1.125rem;
+    }
+
+    .carrossel-container {
+      padding: 0 80px;
+      scroll-padding-left: 80px;
+    }
+
+    .book-card {
+        width: 300px;
+    }
+
+    .book-cover {
+        height: 400px;
+    }
+}

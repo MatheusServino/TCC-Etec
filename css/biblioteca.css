@@ -1,0 +1,178 @@
+/* ========================= Importação de Fonte ========================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap');
+
+/* ========================= Estilos Globais ========================= */
+body {
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f5f0E6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+
+/* ========================= Cards ========================= */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    width: 250px;
+    height: 200px;
+    background-color: #bb7d7d;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.box i {
+    font-size: 4em;
+    margin-bottom: 12px;
+    color: #000000;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.box i:hover {
+    color: rgb(114, 114, 114);
+    transform: scale(1.1);
+}
+
+.box p {
+    margin: 0;
+    font-weight: bold;
+    color: #000000;
+}
+
+.icon-text {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+/* ========================= Links ========================= */
+a:link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+a:visited {
+    color: rgb(0, 0, 0);
+}
+
+a:hover {
+    color: rgb(0, 0, 0);
+}
+
+a:active {
+    color: rgb(0, 0, 0);
+}
+/* ================= Estilos Base (Mobile-First) ================= */
+.carrossel-container {
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    padding: 0 5px;
+    scroll-snap-type: x mandatory;
+  }
+   
+  .book-card {
+    flex: 0 0 auto;
+    width: 150px;
+    scroll-snap-align: start;
+  }
+   
+  .book-cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+   
+  .btn-carrossel {
+    font-size: 18px;
+    padding: 8px;
+   
+  }
+   
+  /* ================= Responsividade: Tablets e Telas Médias ================= */
+  @media (min-width: 768px) {
+    .carrossel-container {
+      gap: 20px;
+      padding: 0 20px;
+    }
+   
+    .book-card {
+      width: 200px;
+    }
+   
+    .book-cover {
+      height: 270px;
+    }
+   
+    .btn-carrossel {
+      font-size: 22px;
+      padding: 12px;
+    }
+  }
+   
+  /* ================= Responsividade: Desktops Grandes, TVs e Datashows ================= */
+  @media (min-width: 1200px) {
+    .carrossel-container {
+      gap: 30px;
+      padding: 0 50px;
+    }
+   
+    .book-card {
+      width: 250px;
+    }
+   
+    .book-cover {
+      height: 350px;
+    }
+   
+    .btn-carrossel {
+      font-size: 28px;
+      padding: 15px;
+    }
+  }
+   
+  /* ================= Estilos Opcionais para TVs e Datashows (foco na clareza à distância) ================= */
+   
+  @media (min-width: 1920px) {
+    body {
+      font-size: 1.125rem;
+    }
+    .carrossel-container {
+   
+      justify-content: center;
+      max-width: 80%;
+      margin: 0 auto;
+    }
+    .book-card {
+      width: 300px;
+    }
+    .book-cover {
+      height: 400px;
+    }
+   
+  }
